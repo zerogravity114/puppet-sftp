@@ -1,6 +1,5 @@
-# Plan of action for the module:
+# This module is designed to accomplish a specific configuration.  Run 'puppet apply examples/sftp.pp'
 # 1. We will be using OpenSSH with a chroot jail that places users in /opt/sftp/username
-# 2. Install Openssh, configure it to allow port mapping so connected users can connect to sftp
 # 3. Create user accounts for sftpd.  Manage their home directory, and password (sftpd::users)
 # 4. Create and enforce a cron job for each sftp user that clears their content once per day (1AM) 
 # 4a. Should we wrap this into ::users?  Doesn't need to be a perfect module, just has to work
