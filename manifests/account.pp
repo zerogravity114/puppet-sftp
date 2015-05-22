@@ -37,14 +37,13 @@ define sftp::account (
 	mode => 0750;
 
   }
-# Create a cron job that runs under the user that clears content at 2AM every Tuesday
+# Create a cron job that runs under the user that clears content at 2AM daily
   cron {
 	"${title}_clearcontent":
 	command => "/bin/rm -rf ${home_dir}/incoming/*",
 	user => $username,
 	hour => 2,
 	minute => 0,
-	weekday => 1,
   }
 
 
